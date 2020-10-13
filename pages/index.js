@@ -17,7 +17,7 @@ export default function Home() {
         <div className={styles.grid}>
           <div className={styles.card}>
             <h3> İletişim: </h3>
-            <p>Fettullah Döğer - 0544 414 2814</p>
+            <p>Emre Döğer - 0544 414 2814</p>
             <p>Erullah Döğer - 0541 396 1160</p>
           </div>
         </div>
