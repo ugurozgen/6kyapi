@@ -1,10 +1,17 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import Gallery from "../components/gallery"
+import { useState } from "react"
 
 const gallery = require("../public/gallery.json")
 
 export default function Home() {
+  let [selected, setSelected] = useState("Alçıpan")
+  
+  let handleGallery = (name) => {
+    setSelected(name)
+
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -16,9 +23,17 @@ export default function Home() {
         <h1 className={styles.title}>6k Yapı</h1>
 
         <p />
+
+        <Gallery section={selected}/>
+
         <div className={styles.grid}>
           {gallery.map((section) => {
-            return <h3 className={styles.card}>{section.name}</h3>
+            let hover = section.name === selected ? styles.hover : ""
+            return (
+              <h3 onClick={() => handleGallery(section.name)} className={styles.card + " " + hover}>
+                {section.name}
+              </h3>
+            )
           })}
         </div>
 
