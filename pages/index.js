@@ -2,7 +2,7 @@ import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import Gallery from "../components/gallery"
 
-const gallery = require("../public/images/gallery.json")
+const gallery = require("../public/gallery.json")
 
 export default function Home() {
   return (
