@@ -1,5 +1,5 @@
 import Carousel from "react-material-ui-carousel"
-import { Paper } from "@material-ui/core"
+import { Paper, Grid } from "@material-ui/core"
 
 const gallery = require("../public/gallery.json")
 
@@ -12,7 +12,7 @@ export default function Gallery(props) {
   }
 
   return (
-    <Carousel indicators="true" navButtonsAlwaysVisible="true">
+    <Carousel autoPlay={false} indicators={true} navButtonsAlwaysVisible={true}>
       {items.map((item, i) => (
         <Item key={i} item={item} />
       ))}
@@ -22,8 +22,12 @@ export default function Gallery(props) {
 
 function Item(props) {
   return (
-    <Paper elevation={0}>
-      <img src={props.item} />
-    </Paper>
+    <Grid container>
+      <Grid item xs={12}>
+        <Paper elevation={0}>
+          <img width="100%" src={props.item} />
+        </Paper>
+      </Grid>
+    </Grid>
   )
 }
